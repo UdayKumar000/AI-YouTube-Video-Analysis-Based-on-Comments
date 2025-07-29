@@ -17,11 +17,9 @@ let visitCount = 0;
 if (fs.existsSync(filePath)) {
   visitCount = parseInt(fs.readFileSync(filePath, "utf-8"));
 }
-
 app.use((req, res, next) => {
   visitCount++;
-  console.log(`Visit count: ${visitCount}`);
-  console.log(`VideoID : ${req.body}`);
+  console.log(visitCount)
   fs.writeFileSync(filePath, visitCount.toString());
   next();
 });

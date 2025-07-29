@@ -6,7 +6,9 @@ import generateResponse from "./responseGenerator.js";
 // let videoID = "641_goNZGog"; // Example video ID, replace with actual video ID
 export default async function getResults(req,res) {
 try{
+    
     const {videoID} = req.body;
+    console.log(videoID)
     if(!videoID){
         return res.send({error:"Provide Video ID"});
     }
