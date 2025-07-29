@@ -3,14 +3,14 @@ import router from "./routes/allRoutes.js";
 import path from "path";
 import cors from "cors";
 import { fileURLToPath } from "url";
-app.use(cors());
+
 // Get the directory name of the current module
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 import fs from "fs";
 const app = express();
-
+app.use(cors());
 const filePath = path.join(__dirname, "./visitCount.txt");
 
 // Load or initialize count
