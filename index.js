@@ -1,9 +1,16 @@
 import express from "express";
 import router from "./routes/allRoutes.js";
+import path from "path";
+import { fileURLToPath } from "url";
+
+// Get the directory name of the current module
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 import fs from "fs";
 const app = express();
 
-const filePath = "./tmp/visitCount.txt";
+const filePath = path.join(__dirname, "./visitCount.txt");
 
 // Load or initialize count
 let visitCount = 0;
