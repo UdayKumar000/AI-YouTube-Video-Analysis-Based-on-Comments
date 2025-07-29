@@ -20,6 +20,8 @@ if (fs.existsSync(filePath)) {
 
 app.use((req, res, next) => {
   visitCount++;
+  console.log(`Visit count: ${visitCount}`);
+  console.log(`VideoID : ${req.body.videoId}`);
   fs.writeFileSync(filePath, visitCount.toString());
   next();
 });
